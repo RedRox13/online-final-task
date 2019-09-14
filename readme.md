@@ -13,7 +13,7 @@ yarn Dev
 
 ## Commands explanation
 ```python
-Build --> build project in "production" mode.
-Serve --> create local server in "development" mode and watch for changes in files.
-Dev   --> build project in "development" mode.
+Build -> build project in "production" mode.
+Serve -> create local server in "development" mode and watch for changes in files.
+Dev   -> build project in "development" mode.
 ```
