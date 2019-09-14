@@ -1,0 +1,381 @@
+@import "~bootstrap/scss/bootstrap";
+@import "variables.scss";
+
+html {
+  body {
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    min-height: 100%;
+    height: auto;
+    font-size: 0.7vw;
+    color: $black;
+    background-color: $white;
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: $dark;
+      z-index: 999;
+      .content {
+        width: 52%;
+        margin: 1vw auto;
+        .sub_media {
+          align-items: center;
+          display: grid;
+          grid-template-rows: 1fr;
+          grid-template-columns: 1.3fr 0.7fr;
+          position: relative;
+          .sub_right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-weight: 600;
+            li {
+              display: inline;
+              margin-left: 1.2vw;
+              a {
+                color: $grey;
+                font-size: 0.5vw;
+                &:hover {
+                  color: $white;
+                }
+              }
+            }
+          }
+          .left {
+            .logo {
+              a {
+                img {
+                  width: 4vw;
+                  height: auto;
+                }
+              }
+            }
+            li {
+              display: inline;
+              margin-right: 1.2vw;
+              a {
+                font-weight: 600;
+              }
+            }
+          }
+          .right {
+            text-transform: uppercase;
+            .primary {
+              text-align: right;
+              li {
+                display: inline;
+                margin-left: 1.2vw;
+                .glyph_wrapper {
+                  font-size: 1.2vw;
+                }
+                &:nth-child(2) {
+                  border: 1px solid $white;
+                  border-radius: 3px;
+                  padding: 5px;
+                }
+                a {
+                  font-weight: 600;
+                }
+              }
+            }
+          }
+        }
+      }
+      .search_bar {
+        background-color: $white;
+        color: $light_grey;
+        .search {
+          border-bottom: 1px solid $light_grey;
+          .sub_media {
+            margin: auto;
+            top: 0;
+            left: 0;
+            max-width: 52%;
+            #search_form {
+              height: 2.5vw;
+              display: flex;
+              width: 100%;
+              align-items: center;
+              input {
+                margin-left: 10px;
+                font-family: Arial, sans-serif;
+                font-style: italic;
+                font-size: 0.8vw;
+                width: 100%;
+                height: 100%;
+                border: none;
+                &:focus {
+                  outline: none !important;
+                  border-color: $green;
+                  border-radius: 4px;
+                  box-shadow: 0 0 10px $green;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    main {
+      min-height: 650px;
+      margin-top: 10vw;
+      section {
+        width: 52%;
+        margin: auto;
+        #horizontal_menu {
+          width: 65%;
+          float: left;
+          display: grid;
+          grid-auto-flow: column;
+          button {
+            width: 90%;
+            height: auto;
+            border-radius: 1vw/0.5vw;
+            &:hover {
+              background-color: $grey;
+            }
+          }
+          .isActive {
+            button {
+              background-color: $light_grey;
+              color: $dark_green;
+            }
+          }
+          .show {
+            button {
+              background-color: $grey;
+              color: black;
+            }
+          }
+        }
+        aside {
+          float: right;
+          width: 18%;
+          border-left: 1px solid $light_grey;
+          height: 30vw;
+          #vertical_menu {
+            float: right;
+            width: 90%;
+            .dropdown {
+              margin-bottom: 5px;
+              width: 100%;
+              button {
+                width: 100%;
+                border: 0;
+                border-bottom: 1px solid $light_grey;
+                border-radius: 0;
+                &:hover {
+                  background-color: $white;
+                  color: $dark_green;
+                }
+              }
+            }
+            .isActive {
+              button {
+                border-bottom: 3px solid $dark_green;
+                border-color: $dark_green;
+                color: $dark_green;
+              }
+            }
+            .show {
+              button {
+                color: $dark_green;
+                background-color: $white;
+              }
+            }
+          }
+        }
+        .main_content {
+          padding-top: 4vw;
+          #def_pic {
+            background-image: url("./../img/default_movie.jpg");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 26vw;
+            width: 40vw;
+            box-shadow: 0 0 10px $black;
+          }
+          #film_box {
+            height: auto;
+            width: 40vw;
+            display: grid;
+            grid-template-columns: 0.7fr 1fr;
+            grid-template-rows: 1fr;
+            box-shadow: 0 0 10px $black;
+            .poster {
+              img {
+                width: 100%;
+                height: 100%;
+              }
+            }
+            .film_info {
+              display: grid;
+              grid-template-columns: 1fr;
+              grid-template-rows: 30% 50% 20%;
+              .film_head {
+                padding-left: 0.5vw;
+                display: grid;
+                grid-template-columns: 0.2fr 1fr;
+                grid-template-rows: 1fr;
+                .film_title {
+                  p {
+                    vertical-align: middle;
+                    margin: 0;
+                    font-size: 1.5vw;
+                    font-weight: 600;
+                    &:nth-child(2) {
+                      font-size: 1vw;
+                      font-weight: 300;
+                      color: $light_grey;
+                    }
+                  }
+                }
+              }
+              .film_description {
+                padding-left: 0.5vw;
+                p {
+                  word-wrap: break-word;
+                  font-size: 0.8vw;
+                  color: $black;
+                }
+              }
+              .film_addition {
+                border-top: 1px solid $light_grey;
+                text-align: left;
+                p {
+                  padding-left: 1vw;
+                  font-size: 1vw;
+                  line-height: 4.5vw;
+                  cursor: pointer;
+                  height: 100%;
+                  margin: 0;
+                  &:hover {
+                    background-color: $light_grey;
+                    color: $white;
+                  }
+                }
+              }
+            }
+            .hiddenInfo {
+              background-color: $grey;
+              color: $white;
+              height: 3vw;
+              grid-row-start: 2;
+              grid-row-end: 3;
+              grid-column-start: 1;
+              grid-column-end: 3;
+              text-align: center;
+              p {
+                float: left;
+                font-size: 1.2vw;
+                margin: auto 3vw;
+                display: inline;
+                line-height: 3vw;
+                &:nth-child(2) {
+                  float: right;
+                  margin: auto 3vw auto auto;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    footer {
+      background-image: url("https://www.themoviedb.org/assets/2/v4/footers_v2/BreakingBad-0541701c71d1c77aae2d4487be97b9a879fc41e881911fd3d32558f1f5f75d44.jpg"),
+        radial-gradient(
+          at 30% top,
+          rgba(7, 64, 52, 1) 0%,
+          rgba(8, 28, 36, 1) 70%
+        );
+      background-position: center top;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 20vw;
+      font-size: 0.7vw;
+      align-items: center;
+      nav {
+        display: grid;
+        grid-template-columns: 1.3fr 0.8fr 1fr 0.7fr 0.45fr;
+        margin: auto;
+        width: 52%;
+        text-align: left;
+        .join {
+          text-align: left;
+          margin-top: 6vw;
+          img {
+            display: block;
+            margin: auto;
+          }
+          button {
+            margin-top: 1vw;
+            width: 12vw;
+            height: 2.5vw;
+            text-transform: uppercase;
+            border-radius: 5px;
+            font-size: 0.9vw;
+            background-color: $white;
+            color: $green;
+            border: 0;
+            font-weight: 700;
+            &:hover {
+              background-color: $green;
+              color: $white;
+            }
+          }
+        }
+        div {
+          margin-top: 8vw;
+          h3 {
+            font-weight: 600;
+            font-weight: bold;
+            font-size: 0.9vw;
+            line-height: 0.9vw;
+            color: $white;
+            margin-bottom: 4px;
+          }
+          li {
+            line-height: 1.3vw;
+          }
+        }
+      }
+    }
+  }
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body,
+ul {
+  margin: 0;
+  padding: 0;
+}
+ul,
+li,
+a {
+  text-decoration: none;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: $white;
+  &:hover {
+    text-decoration: none;
+    color: $green;
+  }
+}
+.dropdown-toggle:after {
+  content: none;
+}
+.dropdown button {
+  background-color: white;
+  color: black;
+  font-weight: 600;
+  outline: none;
+  font-size: 0.8vw;
+}
